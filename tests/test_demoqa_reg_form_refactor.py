@@ -39,10 +39,10 @@ def test_student_registration_form(setup_browser):
         registration_page.type_current_address('426 Jordy Lodge Cartwrightshire, SC 88120-6700')
 
     with allure.step('Выбрать значение для State'):
-        registration_page.select_state('Haryana')
+        registration_page.select_state('Uttar Pradesh')
 
     with allure.step('Выбрать значение для City'):
-        registration_page.select_city('Panipat')
+        registration_page.select_city('Agra')
 
     with allure.step('Нажать на кнопку для отправки формы'):
         registration_page.submit_button_click()
@@ -59,7 +59,7 @@ def test_student_registration_form(setup_browser):
                 'Hobbies Reading',
                 'Picture original.jpg',
                 'Address 426 Jordy Lodge Cartwrightshire, SC 88120-6700',
-                'State and City Haryana Panipat'
+                'State and City Uttar Pradesh Agra'
             ]
         )
 

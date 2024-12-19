@@ -1,15 +1,16 @@
 import pytest
 from selene import browser
-from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
 from utils import attach
 
+
 @pytest.fixture(scope="function")
-def setup_browser():
+def setup_browser(request):
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": "126.0",
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -22,6 +23,7 @@ def setup_browser():
         options=options)
 
     browser.config.driver = driver
+    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
 
     yield browser
 

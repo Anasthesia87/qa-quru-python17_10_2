@@ -24,6 +24,7 @@ def setup_browser():
 
     browser.config.driver = driver
     browser.config.base_url = 'https://demoqa.com'
+    browser.config.driver.maximize_window()
 
     yield browser
 

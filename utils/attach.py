@@ -1,15 +1,10 @@
-import os
-
 import allure
 from allure_commons.types import AttachmentType
 
 
 def add_screenshot(browser):
-    browser.driver.save_screenshot(
-        os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'temp/image.png')))
-    allure.attach.file(
-        f"{os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'temp/image.png'))}",
-        name="ScreenShot", attachment_type=AttachmentType.PNG)
+    png = browser.driver.get_screenshot_as_png()
+    allure.attach(body=png, name='screenshot', attachment_type=AttachmentType.PNG, extension='.png')
 
 
 def add_logs(browser):
@@ -18,7 +13,8 @@ def add_logs(browser):
 
 
 def add_html(browser):
-    allure.attach(browser.driver.page_source, name="Html", attachment_type=AttachmentType.HTML)
+    html = browser.driver.page_source
+    allure.attach(html, 'page_source', AttachmentType.HTML, '.html')
 
 
 def add_video(browser):

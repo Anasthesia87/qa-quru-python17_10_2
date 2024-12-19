@@ -23,8 +23,7 @@ def setup_browser():
         options=options)
 
     browser.config.driver = driver
-    browser.config.driver.maximize_window()
-    browser.config.base_url = 'https://demoqa.com'
+    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
 
 
     yield browser

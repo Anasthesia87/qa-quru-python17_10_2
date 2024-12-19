@@ -6,11 +6,11 @@ from utils import attach
 
 
 @pytest.fixture(scope="function")
-def setup_browser(request):
+def setup_browser():
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "126.0",
+        "browserVersion": "100.0",
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -23,7 +23,7 @@ def setup_browser(request):
         options=options)
 
     browser.config.driver = driver
-    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
+    browser.config.base_url = 'https://demoqa.com'
 
     yield browser
 

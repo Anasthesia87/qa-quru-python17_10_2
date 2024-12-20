@@ -20,7 +20,7 @@ def test_student_registration_form(setup_browser):
     with allure.step('Выбрать значение для Gender'):
         registration_page.select_gender('[for=gender-radio-2]')
 
-    with allure.step('Выбрать значение для Mobile'):
+    with allure.step('Заполнить поле Mobile'):
         registration_page.type_user_number('0123456789')
 
     with allure.step('Заполнить поле Date of Birth'):
@@ -29,7 +29,7 @@ def test_student_registration_form(setup_browser):
     with allure.step('Заполнить поле Subjects'):
         registration_page.type_subjects('Arts', 'En')
 
-    with allure.step('Заполнить поле Hobbies'):
+    with allure.step('Выбрать значение для Hobbies'):
         registration_page.select_hobbies('[for=hobbies-checkbox-2]')
 
     with allure.step('Выбрать файл для Picture'):
